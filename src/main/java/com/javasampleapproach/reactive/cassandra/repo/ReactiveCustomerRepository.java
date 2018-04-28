@@ -8,7 +8,7 @@ import com.javasampleapproach.reactive.cassandra.model.Customer;
 
 import reactor.core.publisher.Flux;
 
-public interface ReactiveCustomerRepository extends ReactiveCrudRepository<Customer, UUID>{
+public interface ReactiveCustomerRepository extends ReactiveCrudRepository<Customer, String>{
 
 	Flux<Customer> findByAge(int age);
 }

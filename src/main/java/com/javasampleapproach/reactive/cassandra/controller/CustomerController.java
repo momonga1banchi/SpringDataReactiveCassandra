@@ -51,7 +51,7 @@ public class CustomerController {
 	}
 
 	@PutMapping("/customers/{id}")
-	public Mono<ResponseEntity<Customer>> updateCustomer(@PathVariable("id") UUID id, @RequestBody Customer customer) {
+	public Mono<ResponseEntity<Customer>> updateCustomer(@PathVariable("id") String id, @RequestBody Customer customer) {
 		System.out.println("Update Customer with ID = " + id + "...");
 
 		return customerRepository.findById(id).flatMap(customerData -> {
@@ -64,7 +64,7 @@ public class CustomerController {
 	}
 
 	@DeleteMapping("/customers/{id}")
-	public ResponseEntity<String> deleteCustomer(@PathVariable("id") UUID id) {
+	public ResponseEntity<String> deleteCustomer(@PathVariable("id") String id) {
 		System.out.println("Delete Customer with ID = " + id + "...");
 
 		try {
